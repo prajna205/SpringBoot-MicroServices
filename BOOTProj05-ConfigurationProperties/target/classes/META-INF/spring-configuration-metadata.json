@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "org.nit",
+      "type": "com.nt.sbeans.Company",
+      "sourceType": "com.nt.sbeans.Company"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
