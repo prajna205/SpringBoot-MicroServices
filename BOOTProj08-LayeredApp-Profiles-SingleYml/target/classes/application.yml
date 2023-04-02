@@ -1,0 +1,47 @@
+#activate profile
+spring:
+  profiles:
+    active: test
+---
+spring:
+  profiles: dev
+  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///spring
+    username: root
+    password: 1998
+    type: org.apache.commons.dbcp2.BasicDataSource
+---
+spring:
+  profiles: test
+  
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql:///spring
+    username: root
+    password: 1998
+---
+spring:
+  profiles: uat
+  
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: 1999
+    type: oracle.ucp.jdbc.PoolDataSourceImpl
+---
+spring:
+  profiles: prod
+  
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: system
+    password: 1999
+    hikari:
+      maximum-pool-size: 100
+      connection-timeout: 60000
+      minimum-idle: 10
+   
